@@ -1,0 +1,23 @@
+{
+    "name": "Discord watcher",
+    "version": "1.0.0",
+    "description": "discord watcher",
+    "manifest_version": 3,
+    "author": "biwano",
+    "permissions": [
+        "storage"
+    ],
+    "action":{
+        "default_popup": "index.html",
+        "default_title": "Discord watcher"
+    },
+    "background": {
+        "service_worker": "background.js"
+    },
+    "content_scripts": [
+        {
+            "matches": ["https://discord.com/channels/*"],
+            "js": ["inject.js"]
+        }
+    ]
+}
